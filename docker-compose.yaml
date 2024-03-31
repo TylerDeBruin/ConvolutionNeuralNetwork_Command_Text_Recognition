@@ -4,3 +4,6 @@ services:
     build: .
     ports:
       - "8888:8888"
+    volumes:
+      - ./CS4964-Final.ipynb:/final/CS4964-Final.ipynb
+      - ./speech_commands:/final/speech_commands

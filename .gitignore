@@ -3,3 +3,5 @@
 .jupyter/
 .local/
 .npm/
+__pycache__/
+.Trash-0/
