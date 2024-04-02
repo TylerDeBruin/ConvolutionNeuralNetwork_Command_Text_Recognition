@@ -1,9 +1,15 @@
 version: '3'
 services:
   notebook:
+    user: root
     build: .
     ports:
       - "8888:8888"
     volumes:
       - ./CS4964-Final.ipynb:/final/CS4964-Final.ipynb
       - ./speech_commands:/final/speech_commands
+    environment:
+        CHOWN_HOME: 'yes'
+        CHOWN_HOME_OPTS: '-R'
+        JUPYTER_ENABLE_LAB: 1 
+
