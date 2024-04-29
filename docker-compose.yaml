@@ -6,10 +6,24 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ./CS4964-Final.ipynb:/final/CS4964-Final.ipynb
+      - ./final/speech_commands/CS4964-Final.ipynb:/speech_commands/CS4964-Final.ipynb
       - ./speech_commands:/final/speech_commands
     environment:
         CHOWN_HOME: 'yes'
         CHOWN_HOME_OPTS: '-R'
         JUPYTER_ENABLE_LAB: 1 
 
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: cs4964
+      POSTGRES_USER: user
+      PGUSER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
