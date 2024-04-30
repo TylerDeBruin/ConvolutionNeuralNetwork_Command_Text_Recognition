@@ -17,8 +17,8 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_DB: cs4964
-      POSTGRES_USER: user
-      PGUSER: user
+      POSTGRES_USER: root
+      PGUSER: root
       POSTGRES_PASSWORD: password
     ports:
       - "5432:5432"
